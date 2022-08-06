@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Slides from './components/Slides';
 
 function App() {
+
+  const title = "Slideshow App";
+
+  const SLIDES = [
+    {
+        title: "Today's workout plan",
+        text: "We're gonna do 3 fundamental exercises."
+    },
+    {
+        title: "First, 10 push-ups",
+        text: "Do 10 reps. Remember about full range of motion. Don't rush."
+    },
+    {
+        title: "Next, 20 squats",
+        text: "Squats are important. Remember to keep your back straight."
+    },
+    {
+        title: "Finally, 15 sit-ups",
+        text: "Slightly bend your knees. Remember about full range of motion."
+    },
+    {
+        title: "Great job!",
+        text: "You made it, have a nice day and see you next time!"
+    }
+];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <div>
+            <nav id='navbar'>
+                <h1 className='App'>{title}</h1>
+            </nav>
+            <div className="App">
+                <Slides slides={SLIDES}/>
+            </div>
+        </div>
+    );
 }
 
 export default App;
